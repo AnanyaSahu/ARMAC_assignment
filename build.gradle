@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    compileOnly group: 'com.opencsv', name: 'opencsv', version: '5.6'
+//    compileOnly group: 'org.apache.commons', name: 'commons-csv', version: '1.8'
+    // https://mvnrepository.com/artifact/com.opencsv/opencsv
+    implementation 'com.opencsv:opencsv:5.9'
+//    implementation 'org.projectlombok:lombok:1.18.30'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation 'org.apache.commons:commons-csv:1.1'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'junit:junit:4.12'
+
+    // Hibernate
+    implementation 'org.hibernate:hibernate-core:5.6.5.Final'
+    implementation 'org.hibernate:hibernate-entitymanager:5.6.5.Final'
+
+    // MySQL Connector
+//    runtimeOnly 'mysql:mysql-connector-java:8.0.28'
+    implementation 'mysql:mysql-connector-java:8.0.28'
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-secretsmanager
+//    implementation(platform("software.amazon.awssdk:bom:2.21.1"))
+    // https://mvnrepository.com/artifact/software.amazon.awssdk/secretsmanager
+    implementation 'software.amazon.awssdk:secretsmanager:2.24.11'
+
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.16.1'
+
+
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation 'org.json:json:20240205'
+
+
+//    implementation 'com.amazonaws:aws-java-sdk-secretsmanager:1.12.667'
+
+}
+
+test {
+    useJUnitPlatform()
+}
