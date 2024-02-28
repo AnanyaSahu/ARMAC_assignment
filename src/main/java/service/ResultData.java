@@ -10,9 +10,8 @@ public class ResultData {
         rr.getValidRecords();
 ////        rr.insertRecords();
         rr.getAveragePurchaseTimePlanned();
-//        rr.getMaxCost();
+        rr.getMaxCost();
 
-//        AWSSecret.getSecret();
 
     }
 

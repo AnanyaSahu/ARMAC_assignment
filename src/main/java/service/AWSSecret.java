@@ -28,7 +28,6 @@ public class AWSSecret {
         try {
             getSecretValueResponse = client.getSecretValue(getSecretValueRequest);
 
-            System.out.println(new JSONObject(getSecretValueResponse.secretString()));
 
             return new JSONObject(getSecretValueResponse.secretString());
         } catch (Exception e) {
