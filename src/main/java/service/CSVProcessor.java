@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class CSVProcessor {
-     String csvDataFilePath = "src/main/resources/data.csv";
-     String newCSVDataFilePath = "src/main/resources/processedCSV.csv";
+     String csvDataFilePath = "resources/data.csv";
+     String newCSVDataFilePath = "resources/processedCSV.csv";
      int countValidRecords = 0;
 
 
