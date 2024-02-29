@@ -12,24 +12,24 @@ import java.util.List;
 import java.util.Objects;
 
 public class CSVProcessor {
-     String csvDataFilePath = "../../resources/data.csv";
-     String newCSVDataFilePath = "../../resources/processedCSV.csv";
+     String csvDataFilePath = "../../../src/main/resources/data.csv";
+     String processedCSVFilePath = "../../../src/main/resources/processedCSV.csv";
      int countValidRecords = 0;
 
 
     public void readCSV()  {
 
         preprocessCSVFile(csvDataFilePath);
-        convertToList(newCSVDataFilePath);
+        convertToList(processedCSVFilePath);
 
     }
 
     private void preprocessCSVFile(String csvDataFilePath) {
 
-        File f = new File(newCSVDataFilePath);
+        File f = new File(processedCSVFilePath);
 
         try (InputStream inputStream = Main.class.getResourceAsStream("/data.csv");
-             FileReader reader = new FileReader(csvDataFilePath);
+//             FileReader reader = new FileReader(csvDataFilePath);
              FileWriter fw = new FileWriter(f)
         ){
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
@@ -52,7 +52,8 @@ public class CSVProcessor {
 
     private void convertToList(String filepath) {
         List<Part> listOfParts = new ArrayList<>();
-        try (CSVReader reader = new CSVReader(new FileReader(filepath))
+        try (InputStream inputStream = Main.class.getResourceAsStream(filepath);
+             CSVReader reader = new CSVReader(new FileReader(filepath))
         ) {
             String [] nextLine;
             List<String[]> listof=  reader.readAll();
