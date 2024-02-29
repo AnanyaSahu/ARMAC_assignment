@@ -38,7 +38,6 @@ public class PartRepo {
         }
         finally {
             session.close();
-//            sessionFactory.close();
         }
 
     }
@@ -47,8 +46,6 @@ public class PartRepo {
         DatabaseConnection dcSession= new DatabaseConnection();
         Session session = dcSession.connectDB();
 
-        // Begin a transaction
-        Transaction transaction = session.beginTransaction();
         try {
             Query<Double> query = session.createQuery("select avg(purchaseTimePlanned) from Part", Double.class);
             // Execute the query and get the result
@@ -59,7 +56,6 @@ public class PartRepo {
         }
         finally {
             session.close();
-//            sessionFactory.close();
         }
 
     }
@@ -68,8 +64,6 @@ public class PartRepo {
         DatabaseConnection dcSession= new DatabaseConnection();
         Session session = dcSession.connectDB();
 
-        // Begin a transaction
-        Transaction transaction = session.beginTransaction();
         try {
             Query<Double> query = session.createQuery("select max(cost) from Part", Double.class);
             // Execute the query and get the result
@@ -80,7 +74,6 @@ public class PartRepo {
         }
         finally {
             session.close();
-//            sessionFactory.close();
         }
     }
 }

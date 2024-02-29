@@ -34,22 +34,4 @@ public class Part {
 
     @Column(name = "min")
     private Integer min;
-
-    // Default constructor
-//    public Part() {
-//    }
-
-    // Getters and setters
-    // Add getters and setters for all fields
-    // Omitted for brevity
-
-    // Optional constructor with fields
-//    public Part(String description, Integer purchaseTimePlanned, Double cost, Double demandForecast, String demandPLCDO, Integer min) {
-//        this.description = description;
-//        this.purchaseTimePlanned = purchaseTimePlanned;
-//        this.cost = cost;
-//        this.demandForecast = demandForecast;
-//        this.demandPLCDO = demandPLCDO;
-//        this.min = min;
-//    }
 }

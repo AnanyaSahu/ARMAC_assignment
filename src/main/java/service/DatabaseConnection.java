@@ -10,7 +10,6 @@ public class DatabaseConnection {
     public Session connectDB(){
         String jdbcUrl = "";
 
-        // Open a new session
         try {
             JSONObject awsSecrets = AWSSecret.getSecret();
             Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
@@ -23,19 +22,14 @@ public class DatabaseConnection {
             configuration.setProperty("hibernate.connection.username",  awsSecrets.get("username").toString());
             configuration.setProperty("hibernate.connection.password", awsSecrets.get("password").toString());
 
-            SessionFactory sessionFactory = configuration
-                    .buildSessionFactory();
+            SessionFactory sessionFactory = configuration.buildSessionFactory();
 
             Session session = sessionFactory.openSession();
             System.out.println("Connected to database successfully!");
             return session;
         } catch (Exception e) {
-
             e.printStackTrace();
             return null;
-        } finally {
-            // Close the SessionFactory when done
-            //sessionFactory.close();
         }
     }
 }

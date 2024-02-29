@@ -7,11 +7,6 @@ import java.util.List;
 
 public class PartService {
 
-    public int getValidRecords()  {
-        return new CSVProcessor().findValidRecords();
-
-    }
-
     public Double getMaxCost()  {
         return new PartRepo().getMaxCost();
     }
@@ -22,9 +17,7 @@ public class PartService {
 
     }
     public void insertRecords(List<Part> listOfParts)  {
-//        listOfParts.forEach(part -> {
-//            new PartRepo().savePartData(part);
-//        });
+        listOfParts.forEach(part -> new PartRepo().savePartData(part));
 
 
     }

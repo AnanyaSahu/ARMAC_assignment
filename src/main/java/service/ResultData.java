@@ -1,7 +1,5 @@
 package service;
 
-import repository.PartRepo;
-
 public class ResultData {
 
 
@@ -9,7 +7,6 @@ public class ResultData {
         CSVProcessor cs = new CSVProcessor();
         PartService partService = new PartService();
         int validRecords = cs.readCSV();
-//        int validRecords = partService.getValidRecords();
         Double avgPurchaseTimePlanned = partService.getAveragePurchaseTimePlanned();
         Double maxCost = partService.getMaxCost();
 

@@ -5,8 +5,6 @@ package service;
  import software.amazon.awssdk.services.secretsmanager.model.GetSecretValueRequest;
  import software.amazon.awssdk.services.secretsmanager.model.GetSecretValueResponse;
 
-
-
 public class AWSSecret {
 
     public static JSONObject getSecret() {
@@ -31,8 +29,6 @@ public class AWSSecret {
 
             return new JSONObject(getSecretValueResponse.secretString());
         } catch (Exception e) {
-            // For a list of exceptions thrown, see
-            // https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
             throw e;
         }
 

@@ -4,7 +4,6 @@
 <hibernate-configuration>
     <session-factory>
         <!-- Database connection settings -->
-
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">${hibernate.connection.url}</property>
         <property name="hibernate.connection.username">${hibernate.connection.username}</property>
@@ -24,7 +23,6 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- Mapping files -->
-        <!-- Add your entity mappings here -->
         <mapping class="model.Part" />
 
     </session-factory>
