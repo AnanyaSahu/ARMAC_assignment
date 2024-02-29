@@ -50,6 +50,13 @@ dependencies {
 //    implementation 'com.amazonaws:aws-java-sdk-secretsmanager:1.12.667'
 
 }
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'mainPackage.Main'
+        )
+    }
+}
 
 test {
     useJUnitPlatform()

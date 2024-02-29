@@ -1,4 +1,4 @@
-package org.example;
+package mainPackage;
 
 import service.ResultData;
 
