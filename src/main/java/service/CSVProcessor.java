@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class CSVProcessor {
      String csvDataFilePath = "../../../src/main/resources/data.csv";
-     String processedCSVFilePath = "../../../src/main/resources/processedCSV.csv";
+     String processedCSVFilePath = "/processedCSV.csv";
      int countValidRecords = 0;
 
 
@@ -54,9 +54,18 @@ public class CSVProcessor {
         List<Part> listOfParts = new ArrayList<>();
         try (InputStream inputStream = Main.class.getResourceAsStream(filepath);
              CSVReader reader = new CSVReader(new FileReader(filepath))
+
         ) {
-            String [] nextLine;
-            List<String[]> listof=  reader.readAll();
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+            String line = " ";
+//            List<String[]> listof=  reader.readAll();
+            List<String[]> listof=   new ArrayList<>();
+            while((line=br.readLine())!=null)
+            {
+                listof.add(line.split(","));
+            }
+
+
 
             listof.subList(1, listof.size()).forEach( listItem -> {
                 if(listItem.length == 7){
