@@ -7,18 +7,18 @@ import java.util.List;
 
 public class PartService {
 
-    public void getValidRecords()  {
-        System.out.println("Number of valid records: "+new CSVProcessor().findValidRecords());
+    public int getValidRecords()  {
+        return new CSVProcessor().findValidRecords();
+
     }
 
-    public void getMaxCost()  {
-        System.out.println(new PartRepo()
-                .getMaxCost());
+    public Double getMaxCost()  {
+        return new PartRepo().getMaxCost();
     }
 
-    public void getAveragePurchaseTimePlanned()  {
-        System.out.println(new PartRepo()
-                .getAvgPurchaseTimePlanned());
+    public Double getAveragePurchaseTimePlanned()  {
+        return new PartRepo().getAvgPurchaseTimePlanned();
+
 
     }
     public void insertRecords(List<Part> listOfParts)  {

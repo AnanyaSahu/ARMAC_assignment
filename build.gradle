@@ -10,7 +10,7 @@ repositories {
     mavenCentral()
 }
 shadowJar {
-    baseName = 'ARMAC-application'
+    baseName = 'ARMAC-application-new'
     classifier = null
     version = null
 }
@@ -41,7 +41,6 @@ dependencies {
     // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-secretsmanager
 //    implementation(platform("software.amazon.awssdk:bom:2.21.1"))
     // https://mvnrepository.com/artifact/software.amazon.awssdk/secretsmanager
-    implementation 'com.amazonaws:aws-java-sdk-core:1.12.35' // Replace with the latest version
 
     implementation 'software.amazon.awssdk:secretsmanager:2.24.11'
 

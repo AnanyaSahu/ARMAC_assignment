@@ -13,7 +13,6 @@ public class DatabaseConnection {
         // Open a new session
         try {
             JSONObject awsSecrets = AWSSecret.getSecret();
-            System.out.println(awsSecrets);
             Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
 
             jdbcUrl =jdbcUrl.concat("jdbc:mysql://").concat(awsSecrets.get("host").toString())
