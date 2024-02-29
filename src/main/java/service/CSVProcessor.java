@@ -12,14 +12,14 @@ import java.util.List;
 import java.util.Objects;
 
 public class CSVProcessor {
-     String csvDataFilePath = "../../../src/main/resources/data.csv";
+     String csvDataFilePath = "/data.csv";
      String processedCSVFilePath = "/processedCSV.csv";
      int countValidRecords = 0;
 
 
     public void readCSV()  {
 
-        preprocessCSVFile(csvDataFilePath);
+        preprocessCSVFile("");
         convertToList(processedCSVFilePath);
 
     }
