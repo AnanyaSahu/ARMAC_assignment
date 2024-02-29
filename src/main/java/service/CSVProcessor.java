@@ -1,6 +1,7 @@
 package service;
 
 import com.opencsv.CSVReader;
+import mainPackage.Main;
 import model.Part;
 //import com.opencsv.exceptions.CsvValidationException;
 
@@ -27,8 +28,11 @@ public class CSVProcessor {
 
         File f = new File(newCSVDataFilePath);
 
-        try (FileReader reader = new FileReader(csvDataFilePath);FileWriter fw = new FileWriter(f)){
-            BufferedReader br = new BufferedReader(reader);
+        try (InputStream inputStream = Main.class.getResourceAsStream("/data.csv");
+             FileReader reader = new FileReader(csvDataFilePath);
+             FileWriter fw = new FileWriter(f)
+        ){
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             String line = " ";
 
             while((line=br.readLine())!=null)
