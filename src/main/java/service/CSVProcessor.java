@@ -53,9 +53,10 @@ public class CSVProcessor {
     private void convertToList(String filepath) {
         List<Part> listOfParts = new ArrayList<>();
         try (InputStream inputStream = Main.class.getResourceAsStream(filepath);
-             CSVReader reader = new CSVReader(new FileReader(filepath))
+
 
         ) {
+            //             CSVReader reader = new CSVReader(new FileReader(filepath))
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             String line = " ";
 //            List<String[]> listof=  reader.readAll();
